@@ -1,0 +1,23 @@
+{
+  "name": "react-ipfs-components",
+  "version": "0.1.0",
+  "description": "React components for fetch and display IPFS content using public gateways.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/filipesoccol/react-ipfs-components.git"
+  },
+  "keywords": [
+    "ipfs",
+    "react"
+  ],
+  "author": "@filipesoccol",
+  "license": "MIT",
+  "dependencies": {
+    "ipfs-public-fetcher": "^0.1.1",
+    "react": "^18.2.0"
+  }
+}
