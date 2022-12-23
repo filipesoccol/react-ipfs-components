@@ -5,10 +5,12 @@ import IPFSFetcher from 'ipfs-public-fetcher';
 const IPFSMedia = ({ content, placeholder, src, finalSrc, setFinalSrc}) => {
 
   useEffect(() => {
-    setTimeout( async () => {
-      setFinalSrc(await IPFSFetcher.FetchContent(src))
-    },0) 
+    setFinalSource()
   }, [src]);
+
+  const setFinalSource = async () => {
+    setFinalSrc(await IPFSFetcher.FetchContent(src))
+  }
 
   return (
     <div>

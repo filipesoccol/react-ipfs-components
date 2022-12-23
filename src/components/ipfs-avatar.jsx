@@ -17,7 +17,7 @@ const IPFSAvatar = ({src, size, radius}) => {
                     width:`${size}px`,
                     height:`${size}px`,
                     borderRadius:`${radius}px`
-                }} 
+                }}
             />}
             placeholder={<div 
                 className="placeholder"
