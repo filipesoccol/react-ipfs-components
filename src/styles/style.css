@@ -1,11 +1,23 @@
-.placeholder {
+.ipfs-wrapper {
+    position: relative;
+}
+
+.ipfs-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s;
+}
+
+.ipfs-placeholder {
+    position: absolute;
     animation-duration: 1.25s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
     animation-name: shimmer;
     animation-timing-function: linear;
-    background: rgba(255,255,255,0.2);
-    background: linear-gradient(to right, rgba(255,255,255,0.2) 10%, rgba(255,255,255,0.6) 18%, rgba(255,255,255,0.2) 33%);
+    background: rgba(200,200,200,0.2);
+    background: linear-gradient(to right, rgba(200,200,200,0.2) 10%, rgba(200,200,200,0.6) 18%, rgba(200,200,200,0.2) 33%);
     background-size: 800px 104px;
 }
 

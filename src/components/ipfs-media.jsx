@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import '../styles/style.css';
-import IPFSFetcher from 'ipfs-public-fetcher';
+import {FetchContent} from 'ipfs-public-fetcher';
 
 const IPFSMedia = ({ content, placeholder, src, finalSrc, setFinalSrc}) => {
 
@@ -9,14 +9,14 @@ const IPFSMedia = ({ content, placeholder, src, finalSrc, setFinalSrc}) => {
   }, [src]);
 
   const setFinalSource = async () => {
-    setFinalSrc(await IPFSFetcher.FetchContent(src))
+    setFinalSrc(await FetchContent(src))
   }
 
   return (
-    <div>
-      {finalSrc && content}
-      {!finalSrc && placeholder}
-    </div>
+    <>
+      {finalSrc ? content : null}
+      {placeholder}
+    </>
   )
 }
 
