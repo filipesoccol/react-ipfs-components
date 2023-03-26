@@ -1,6 +1,6 @@
 {
   "name": "react-ipfs-components",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "React components for fetch and display IPFS content using public gateways.",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,8 @@
   "author": "@filipesoccol",
   "license": "MIT",
   "dependencies": {
-    "ipfs-public-fetcher": "^0.1.16",
+    "ipfs-public-fetcher": "^0.2.2",
+    "prop-types": "^15.8.1",
     "react": "^18.2.0"
   }
 }

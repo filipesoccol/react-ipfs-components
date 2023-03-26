@@ -8,13 +8,11 @@
 
 ### Load any IPFS content from the fastest gateway available just passing a valid path.
 
-The plugin itself verify for you the fastest suitable gateways from the Public Gateways list provided by Protocol Labs.
+React IPFS Components is a powerful library of React components that allows you to easily load any InterPlanetary File System (IPFS) content from the fastest gateway available. With this library, you no longer need to worry about configuring or setting up any gateways or passing a correct CID as a parameter. The plugin itself automatically verifies the fastest suitable gateways from the Public Gateways list provided by Protocol Labs.
 
-Once you have successfully connected to at least 3 of them, the content will show up automatically.
+Once you have successfully connected to at least three of these gateways, the content will show up automatically. The service to fetch images and JSON (metadata) files works by decoupling the URL/CID/Path passed and checking if it is a valid IPFS link. In case of a successful fetch for the CID and subpaths, it uses the best gateway possible to fetch content. If it successfully fetches from one of the best gateways, it returns immediately. Otherwise, it will fallback to the URL previously passed.
 
-This component will help to fetch media from IPFS without needing to set or configure any gateway, no need for pass correct CID as parameter. It grabs the data directly from the fastest responding Gateways. In case it failed to fetch data from the gateways multiple time, this source will be removed from the list and another one will take it's place. 
-
-The service to fetch Images and JSON(Metadata) files work decoupling the URL/CID/Path passed ad check if is a valid IPFS link. In case of succeded fetch for CID and subpaths, it uses the better gateway possible to fetch content. In case of succeded feching from one of the best gateways it returns immediatelly. Otherwise it will fallback to the URL previously passed.
+If the component fails to fetch data from the gateways multiple times, that source will be removed from the list and another one will take its place. This ensures that you always get the fastest and most reliable connection possible.
 
 [Live Demo](https://filipesoccol.github.io/react-ipfs-components-demo/) / [Live Demo Repo](https://github.com/filipesoccol/react-ipfs-components-demo)
 
@@ -43,7 +41,7 @@ IPFSFetcher.Initialize();
 
 Then you can import components and use them on your jsx files:
 ```
-import { IPFSAvatar, IPFSSquared, IPFSFetcher } from 'react-ipfs-components'
+import { IPFSAvatar, IPFSImage, IPFSVideo, IPFSFetcher } from 'react-ipfs-components'
 ```
 
 ## Usage
@@ -59,16 +57,28 @@ We feature two different components with preload:
 <IPFSAvatar size="100" radius="0" src="path or cid"/>
 ```
 
-**IPFSSquared**: A component that has two different properties. 
+**IPFSImage**: A component that has two different properties. 
 
 - width: The width of the image in pixels.
 - height: The height of the image in pixels. 
 ```
-<IPFSSquared width="20" height="20" src="path or cid"/>
-<IPFSSquared width="100" height="300" src="path or cid"/>
+<IPFSImage width="20" height="20" src="path or cid"/>
+<IPFSImage width="100" height="300" src="path or cid"/>
 ```
 
-Both are extending the third component called **ipfs-media**, if you want to customize an implementation, you can extend **ipfs-media** same way **ipfs-squared** and **ipfs-avatar** does with the desired modifications. **ipfs-media** will deal with comunication with the component core, while you just deal with how you will display the object.
+**IPFSVideo**: A video component with multiple options. 
+
+- width: The width of the image in pixels.
+- height: The height of the image in pixels.
+- controls: Show navigation controls. 
+- muted: Mute the video.
+- loop: Restart video automatically once finished.
+- autoplay: Play video automatically after loaded.
+```
+<IPFSVideo width="320" height="240" src="path or cid"/>
+```
+
+ Both the **IPFSImage**, **IPFSVideo** and **IPFSAvatar**  components extend a third component called **ipfs-media**. This component is responsible for communication with the component core, while the other two components handle how the object will be displayed. If you want to customize an implementation, you can extend **ipfs-media** the same way **ipfs-squared** and **ipfs-avatar** do with the desired modifications. This allows you to have full control over how the media is displayed while still benefiting from the underlying functionality provided by the React IPFS Components library.
 
 ## References:
 

@@ -9,6 +9,13 @@
     transition: opacity 0.3s;
 }
 
+.ipfs-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s;
+}
+
 .ipfs-placeholder {
     position: absolute;
     animation-duration: 1.25s;
